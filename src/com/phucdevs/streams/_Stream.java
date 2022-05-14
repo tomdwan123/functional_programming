@@ -3,6 +3,8 @@ package com.phucdevs.streams;
 import com.phucdevs.functional_model.Gender;
 import com.phucdevs.functional_model.Person;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.IntConsumer;
