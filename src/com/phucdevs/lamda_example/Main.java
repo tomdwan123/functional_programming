@@ -8,8 +8,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        callTotalValue();
-        callLamdaCompute();
+        //callTotalValue();
+        //callLamdaCompute();
+        callFluentInterface();
     }
 
     static void callTotalValue() {
@@ -31,9 +32,15 @@ public class Main {
         LazyExample.calWithNonLamdaCompute(); // Path 2
 
         System.out.println("Way with lazy lamda no value");
-        LazyExample.calWithLazyLamdaNoValueCompute(); // Path 2
+         LazyExample.calWithLazyLamdaNoValueCompute(); // Path 2
 
         System.out.println("Way with lazy lamda has value");
         LazyExample.calWithLazyLamdaHasValueCompute(); // here... called... Path 1 + 28
+    }
+
+    static void callFluentInterface() {
+        FluentInterface.callPrintIncremented(); // 5 incremented 6
+        FluentInterface.callPrintDoubled(); // 5 doubled 10
+        FluentInterface.callPrintIncrementedAndDoubled(); // 5 incremented and doubled 12
     }
 }
