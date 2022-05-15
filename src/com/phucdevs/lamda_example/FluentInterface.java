@@ -1,6 +1,26 @@
 package com.phucdevs.lamda_example;
 
+import java.awt.Color;
 import java.util.function.Function;
+import java.util.stream.Stream;
+
+class Camera {
+
+     private Function<Color, Color> filter;
+
+     public Camera(Function<Color, Color>... filters) {
+         filter = Stream.of(filters)
+                 .reduce(Function.identity(), Function::andThen);
+     }
+
+     public Color snap(Color color) {
+         return color;
+     }
+
+     public Color snapFilters(Color color) {
+         return filter.apply(color);
+     }
+ }
 
 /**
  * @author Phuc.Le
@@ -28,5 +48,13 @@ public class FluentInterface {
         Function<Integer, Integer> doubled = e -> e * 2;
 
         printInt(5, "incremented and doubled ", inc.andThen(doubled));
+    }
+
+    public static void callPrintCamera(Camera camera) {
+        System.out.println(camera.snap(new Color(125, 125, 125)));
+    }
+
+    public static void callPrintCameraMutilFilter() {
+        callPrintCamera(new Camera(Color::brighter, Color::darker));
     }
 }

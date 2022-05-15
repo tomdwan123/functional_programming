@@ -39,8 +39,10 @@ public class Main {
     }
 
     static void callFluentInterface() {
-        FluentInterface.callPrintIncremented(); // 5 incremented 6
-        FluentInterface.callPrintDoubled(); // 5 doubled 10
-        FluentInterface.callPrintIncrementedAndDoubled(); // 5 incremented and doubled 12
+        //FluentInterface.callPrintIncremented(); // 5 incremented 6
+        //FluentInterface.callPrintDoubled(); // 5 doubled 10
+        //FluentInterface.callPrintIncrementedAndDoubled(); // 5 incremented and doubled 12
+        //FluentInterface.callPrintCamera(new Camera());
+        FluentInterface.callPrintCameraMutilFilter();
     }
 }
