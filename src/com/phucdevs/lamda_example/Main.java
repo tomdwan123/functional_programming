@@ -8,7 +8,11 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        callTotalValue();
+        callLamdaCompute();
+    }
 
+    static void callTotalValue() {
         List<Integer> values = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
         System.out.println("Way 1");
@@ -20,5 +24,16 @@ public class Main {
         System.out.println(TotalValueExample.totalValuePro(values, e -> true));
         System.out.println(TotalValueExample.totalValuePro(values, e -> e % 2 == 0));
         System.out.println(TotalValueExample.totalValuePro(values, e -> e % 2 != 0));
+    }
+
+    static void callLamdaCompute() {
+        System.out.println("Way no lamda");
+        LazyExample.calWithNonLamdaCompute(); // Path 2
+
+        System.out.println("Way with lazy lamda no value");
+        LazyExample.calWithLazyLamdaNoValueCompute(); // Path 2
+
+        System.out.println("Way with lazy lamda has value");
+        LazyExample.calWithLazyLamdaHasValueCompute(); // here... called... Path 1 + 28
     }
 }
